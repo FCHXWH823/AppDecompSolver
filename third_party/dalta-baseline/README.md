@@ -14,7 +14,8 @@ adapted for this reproduction:
 The Ising solver does not compile or link these files. They are provided only
 for baseline comparison and are built when `BUILD_DALTA_BASELINE=ON`.
 
-The upstream DALTA snapshot does not contain a project-wide license file.
-Before redistributing this directory in a public repository, obtain or confirm
-redistribution permission from the DALTA authors. The embedded
-`cmdline.hpp` retains its original BSD license notice.
+The referenced upstream DALTA snapshot does not contain a project-wide license
+file. These files retain their upstream attribution and are included here for
+experiment reproducibility; consult the DALTA authors about reuse or
+redistribution beyond this artifact. The embedded `cmdline.hpp` retains its
+original BSD license notice.

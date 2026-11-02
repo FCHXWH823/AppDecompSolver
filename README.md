@@ -45,31 +45,105 @@ when rebuilding the optional baseline.
 - `third_party/dalta-baseline/`: optional adapted DALTA baseline snapshot;
 - `TECHNIQUES.md` and `REPRODUCTION.md`: technique and reproduction details.
 
-## Build
+## Installation
 
-The main solver requires CMake 3.16+, a C++20 compiler, and Eigen 3.3+.
+The main bSB solver is CPU-only and requires:
+
+- CMake 3.16 or newer;
+- a C++20 compiler (GCC 10+, Clang 12+, or AppleClang 14+);
+- Eigen 3.3 or newer;
+- Python 3.9+ only when running the experiment driver.
+
+Gurobi and Boost are **not** required for the normal Ising solver.
+
+### Ubuntu/Debian
+
+Install the build dependencies:
 
 ```sh
-cmake -S . -B build
-cmake --build build -j
+sudo apt update
+sudo apt install -y build-essential cmake libeigen3-dev python3 git
 ```
 
-No Gurobi installation is required for the normal bSB solver. To additionally
-build the vendored DALTA comparison executable, install Boost and Gurobi, then
-reconfigure with:
+Clone and build:
 
 ```sh
-cmake -S . -B build -DBUILD_DALTA_BASELINE=ON \
-  -DGUROBI_HOME=/path/to/gurobi
-cmake --build build -j
+git clone https://github.com/FCHXWH823/AppDecompSolver.git
+cd AppDecompSolver
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --parallel
 ```
+
+### macOS
+
+Install the Apple command-line tools and Homebrew dependencies:
+
+```sh
+xcode-select --install
+brew install cmake eigen python
+```
+
+Then clone and build:
+
+```sh
+git clone https://github.com/FCHXWH823/AppDecompSolver.git
+cd AppDecompSolver
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
+  -DEigen3_DIR="$(brew --prefix eigen)/share/eigen3/cmake"
+cmake --build build --parallel
+```
+
+### Verify the installation
+
+Run a fast one-partition smoke test from the repository root:
+
+```sh
+./build/ising-decomp \
+  --input benchmarks/numerics/cos-i-9-o-10-a-0-b-1_57079632-acc.txt \
+  --mode joint --n-free 4 --rounds 1 --partitions 1 \
+  --seed 1 --max-steps 2000 --preset paper --quiet
+```
+
+A successful run ends with a line beginning with `RESULT mode=joint`.
+
+### Optional DALTA/Gurobi baseline
+
+This step is needed only to rerun the DALTA heuristic or ILP baselines. Install
+Boost and a licensed Gurobi distribution first. On Ubuntu, Boost can be
+installed with `sudo apt install libboost-all-dev`; on macOS, use
+`brew install boost`. Set `GUROBI_HOME` to the platform directory that contains
+Gurobi's `include/` and `lib/` directories, then reconfigure the same build:
+
+```sh
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
+  -DBUILD_DALTA_BASELINE=ON \
+  -DGUROBI_HOME=/path/to/gurobi/platform-directory
+cmake --build build --parallel
+./build/dalta-baseline -h
+```
+
+The vendored baseline source and all required truth tables are already in this
+repository; a separate DALTA clone is not needed.
+
+### Troubleshooting
+
+- If CMake cannot find Eigen, pass the directory containing
+  `Eigen3Config.cmake` through `-DEigen3_DIR=/path/to/eigen3/cmake`.
+- Run all example and experiment commands from the repository root because the
+  documented benchmark paths are relative to it.
+- If Gurobi is not detected, verify that both
+  `$GUROBI_HOME/include/gurobi_c++.h` and the Gurobi libraries under
+  `$GUROBI_HOME/lib` exist. The bSB solver can still be built by leaving
+  `BUILD_DALTA_BASELINE=OFF`.
+- The recorded runtimes are machine-dependent; MED should be used for the
+  primary quality comparison.
 
 ## Quick start
 
 Example matching the 9-input configuration in Table 1:
 
 ```sh
-build/ising-decomp \
+./build/ising-decomp \
   --input benchmarks/numerics/cos-i-9-o-10-a-0-b-1_57079632-acc.txt \
   --mode joint --n-free 4 --rounds 5 --partitions 1000 --seed 1
 ```
@@ -90,7 +164,7 @@ Two reproducibility presets are provided:
 Example:
 
 ```sh
-build/ising-decomp \
+./build/ising-decomp \
   --input benchmarks/numerics/cos-i-9-o-10-a-0-b-1_57079632-acc.txt \
   --mode joint --n-free 4 --rounds 5 --partitions 1000 \
   --preset paper-plus

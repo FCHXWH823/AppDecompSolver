@@ -12,6 +12,7 @@ commit `f8458f7` so that no separate DALTA checkout is required.
 Each line contains an integer input address followed by its exact integer
 output value. The solver infers the input and output widths from the table.
 
-The upstream DALTA snapshot does not contain a project-wide license file.
-Confirm redistribution permission with the DALTA authors before publishing
-these copied datasets in a public repository.
+The referenced upstream DALTA snapshot does not contain a project-wide license
+file. The datasets retain their upstream attribution and are included here for
+experiment reproducibility; consult the DALTA authors about reuse or
+redistribution beyond this artifact.
