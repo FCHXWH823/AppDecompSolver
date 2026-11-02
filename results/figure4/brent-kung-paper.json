@@ -1,0 +1,44 @@
+{
+  "benchmark": "Brent-Kung",
+  "input": "benchmarks/axbench-verilog/adder_8.txt",
+  "configuration": {
+    "preset": "paper",
+    "mode": "joint",
+    "inputs": 16,
+    "outputs": 9,
+    "n_free": 7,
+    "n_bound": 9,
+    "row_set": "free",
+    "partitions": 1000,
+    "rounds": 5,
+    "seed": 1,
+    "max_steps": 2000,
+    "sample_period": 10,
+    "energy_window": 10,
+    "epsilon": 1e-8
+  },
+  "command": [
+    "./build/ising-decomp",
+    "--input", "benchmarks/axbench-verilog/adder_8.txt",
+    "--mode", "joint",
+    "--n-free", "7",
+    "--rounds", "5",
+    "--partitions", "1000",
+    "--seed", "1",
+    "--max-steps", "2000",
+    "--preset", "paper"
+  ],
+  "result": {
+    "med": 0.83984375,
+    "solver_time_s": 784.5099408
+  },
+  "figure4_dalta": {
+    "med": 1.11,
+    "time_s": 1886.98
+  },
+  "ratio_to_figure4_dalta": {
+    "med": 0.756616,
+    "time": 0.415749,
+    "speedup": 2.4053
+  }
+}

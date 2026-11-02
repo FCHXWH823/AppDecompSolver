@@ -1,0 +1,39 @@
+{
+  "method": "dalta_separate_ilp",
+  "benchmark": "cos",
+  "status": "ok",
+  "seed": 1,
+  "configuration": {
+    "n_free": 4,
+    "start_bit": 8,
+    "n_try": 1,
+    "partitions": 126,
+    "mip_time_per_model_s": 0.2,
+    "mip_gap": 0.1
+  },
+  "result": {
+    "med": 10.3984,
+    "nmed_percent": 2.03492,
+    "mse": 913.223,
+    "psnr_db": 24.5627,
+    "reported_time_s": 333.061
+  },
+  "paper": {
+    "med": 11.64,
+    "time_s": 258.37,
+    "gurobi_version": "9.1.1"
+  },
+  "command": [
+    "build/dalta-baseline",
+    "--input", "benchmarks/numerics/cos-i-9-o-10-a-0-b-1_57079632-acc.txt",
+    "--output", "/tmp/dalta-separate",
+    "--nFree", "4",
+    "--startBit", "8",
+    "--nTry", "1",
+    "--nComb", "1000",
+    "--seed", "1",
+    "--solver", "separate-ilp",
+    "--MIPTime", "0.2",
+    "--MIPGap", "0.1"
+  ]
+}

@@ -1,0 +1,477 @@
+{
+  "paper": {
+    "dalta_joint": {
+      "cos": [
+        2.96,
+        3.06
+      ],
+      "tan": [
+        3.24,
+        2.83
+      ],
+      "exp": [
+        4.22,
+        2.72
+      ],
+      "ln": [
+        4.69,
+        6.77
+      ],
+      "erf": [
+        1.85,
+        2.76
+      ],
+      "denoise": [
+        4.75,
+        2.81
+      ]
+    },
+    "dalta_joint_ilp": {
+      "cos": [
+        2.48,
+        3600.0
+      ],
+      "tan": [
+        2.62,
+        3600.0
+      ],
+      "exp": [
+        3.55,
+        3600.0
+      ],
+      "ln": [
+        2.55,
+        3600.0
+      ],
+      "erf": [
+        2.66,
+        3600.0
+      ],
+      "denoise": [
+        3.38,
+        3600.0
+      ]
+    },
+    "dalta_separate_ilp": {
+      "cos": [
+        11.64,
+        258.37
+      ],
+      "tan": [
+        10.91,
+        236.32
+      ],
+      "exp": [
+        9.26,
+        242.58
+      ],
+      "ln": [
+        8.32,
+        224.68
+      ],
+      "erf": [
+        5.07,
+        139.6
+      ],
+      "denoise": [
+        10.91,
+        229.25
+      ]
+    },
+    "ising_separate": {
+      "cos": [
+        8.33,
+        0.56
+      ],
+      "tan": [
+        10.45,
+        0.56
+      ],
+      "exp": [
+        7.07,
+        0.74
+      ],
+      "ln": [
+        6.57,
+        0.49
+      ],
+      "erf": [
+        4.61,
+        0.42
+      ],
+      "denoise": [
+        9.69,
+        0.46
+      ]
+    },
+    "ising_joint": {
+      "cos": [
+        2.5,
+        1.75
+      ],
+      "tan": [
+        2.5,
+        1.87
+      ],
+      "exp": [
+        2.66,
+        1.92
+      ],
+      "ln": [
+        2.72,
+        2.77
+      ],
+      "erf": [
+        1.9,
+        1.55
+      ],
+      "denoise": [
+        2.8,
+        1.51
+      ]
+    }
+  },
+  "seed": 1,
+  "runs": {
+    "ising_separate_paper_plus": {
+      "cos": {
+        "status": "ok",
+        "med": 8.173828125,
+        "reported_time_s": 0.405427166,
+        "wall_time_s": 0.5584781169891357,
+        "returncode": 0,
+        "command": [
+          "build/ising-decomp",
+          "--input",
+          "benchmarks/numerics/cos-i-9-o-10-a-0-b-1_57079632-acc.txt",
+          "--mode",
+          "separate",
+          "--n-free",
+          "4",
+          "--rounds",
+          "1",
+          "--partitions",
+          "1000",
+          "--seed",
+          "1",
+          "--max-steps",
+          "2000",
+          "--quiet",
+          "--preset",
+          "paper-plus"
+        ],
+        "stdout": "mode=separate inputs=9 outputs=9 free=4 bound=5 row_set=free partitions=126 seed=1\nRESULT mode=separate med=8.173828125 time_s=0.405427166\n"
+      },
+      "tan": {
+        "status": "ok",
+        "med": 7.10546875,
+        "reported_time_s": 0.314234875,
+        "wall_time_s": 0.3203730583190918,
+        "returncode": 0,
+        "command": [
+          "build/ising-decomp",
+          "--input",
+          "benchmarks/numerics/tan-i-9-o-10-a-0-b-1_256637061-acc.txt",
+          "--mode",
+          "separate",
+          "--n-free",
+          "4",
+          "--rounds",
+          "1",
+          "--partitions",
+          "1000",
+          "--seed",
+          "1",
+          "--max-steps",
+          "2000",
+          "--quiet",
+          "--preset",
+          "paper-plus"
+        ],
+        "stdout": "mode=separate inputs=9 outputs=9 free=4 bound=5 row_set=free partitions=126 seed=1\nRESULT mode=separate med=7.10546875 time_s=0.314234875\n"
+      },
+      "exp": {
+        "status": "ok",
+        "med": 6.10546875,
+        "reported_time_s": 0.371885667,
+        "wall_time_s": 0.3780817985534668,
+        "returncode": 0,
+        "command": [
+          "build/ising-decomp",
+          "--input",
+          "benchmarks/numerics/exp-i-9-o-10-a-0-b-3-acc.txt",
+          "--mode",
+          "separate",
+          "--n-free",
+          "4",
+          "--rounds",
+          "1",
+          "--partitions",
+          "1000",
+          "--seed",
+          "1",
+          "--max-steps",
+          "2000",
+          "--quiet",
+          "--preset",
+          "paper-plus"
+        ],
+        "stdout": "mode=separate inputs=9 outputs=9 free=4 bound=5 row_set=free partitions=126 seed=1\nRESULT mode=separate med=6.10546875 time_s=0.371885667\n"
+      },
+      "ln": {
+        "status": "ok",
+        "med": 7.1796875,
+        "reported_time_s": 0.370828541,
+        "wall_time_s": 0.3783607482910156,
+        "returncode": 0,
+        "command": [
+          "build/ising-decomp",
+          "--input",
+          "benchmarks/numerics/ln-i-9-o-10-a-1-b-10-acc.txt",
+          "--mode",
+          "separate",
+          "--n-free",
+          "4",
+          "--rounds",
+          "1",
+          "--partitions",
+          "1000",
+          "--seed",
+          "1",
+          "--max-steps",
+          "2000",
+          "--quiet",
+          "--preset",
+          "paper-plus"
+        ],
+        "stdout": "mode=separate inputs=9 outputs=9 free=4 bound=5 row_set=free partitions=126 seed=1\nRESULT mode=separate med=7.1796875 time_s=0.370828541\n"
+      },
+      "erf": {
+        "status": "ok",
+        "med": 4.16015625,
+        "reported_time_s": 0.322038833,
+        "wall_time_s": 0.32967305183410645,
+        "returncode": 0,
+        "command": [
+          "build/ising-decomp",
+          "--input",
+          "benchmarks/numerics/erf-i-9-o-10-a-0-b-3-acc.txt",
+          "--mode",
+          "separate",
+          "--n-free",
+          "4",
+          "--rounds",
+          "1",
+          "--partitions",
+          "1000",
+          "--seed",
+          "1",
+          "--max-steps",
+          "2000",
+          "--quiet",
+          "--preset",
+          "paper-plus"
+        ],
+        "stdout": "mode=separate inputs=9 outputs=9 free=4 bound=5 row_set=free partitions=126 seed=1\nRESULT mode=separate med=4.16015625 time_s=0.322038833\n"
+      },
+      "denoise": {
+        "status": "ok",
+        "med": 8.576171875,
+        "reported_time_s": 0.329700041,
+        "wall_time_s": 0.33680295944213867,
+        "returncode": 0,
+        "command": [
+          "build/ising-decomp",
+          "--input",
+          "benchmarks/numerics/denoise-i-9-o-10-a-0-b-3-acc.txt",
+          "--mode",
+          "separate",
+          "--n-free",
+          "4",
+          "--rounds",
+          "1",
+          "--partitions",
+          "1000",
+          "--seed",
+          "1",
+          "--max-steps",
+          "2000",
+          "--quiet",
+          "--preset",
+          "paper-plus"
+        ],
+        "stdout": "mode=separate inputs=9 outputs=9 free=4 bound=5 row_set=free partitions=126 seed=1\nRESULT mode=separate med=8.576171875 time_s=0.329700041\n"
+      }
+    },
+    "ising_joint_paper_plus": {
+      "cos": {
+        "status": "ok",
+        "med": 2.404296875,
+        "reported_time_s": 2.804834,
+        "wall_time_s": 2.8088858127593994,
+        "returncode": 0,
+        "command": [
+          "build/ising-decomp",
+          "--input",
+          "benchmarks/numerics/cos-i-9-o-10-a-0-b-1_57079632-acc.txt",
+          "--mode",
+          "joint",
+          "--n-free",
+          "4",
+          "--rounds",
+          "5",
+          "--partitions",
+          "1000",
+          "--seed",
+          "1",
+          "--max-steps",
+          "2000",
+          "--quiet",
+          "--preset",
+          "paper-plus"
+        ],
+        "stdout": "mode=joint inputs=9 outputs=9 free=4 bound=5 row_set=free partitions=126 seed=1\nRESULT mode=joint med=2.404296875 time_s=2.804834\n"
+      },
+      "tan": {
+        "status": "ok",
+        "med": 2.494140625,
+        "reported_time_s": 2.728407833,
+        "wall_time_s": 2.7360570430755615,
+        "returncode": 0,
+        "command": [
+          "build/ising-decomp",
+          "--input",
+          "benchmarks/numerics/tan-i-9-o-10-a-0-b-1_256637061-acc.txt",
+          "--mode",
+          "joint",
+          "--n-free",
+          "4",
+          "--rounds",
+          "5",
+          "--partitions",
+          "1000",
+          "--seed",
+          "1",
+          "--max-steps",
+          "2000",
+          "--quiet",
+          "--preset",
+          "paper-plus"
+        ],
+        "stdout": "mode=joint inputs=9 outputs=9 free=4 bound=5 row_set=free partitions=126 seed=1\nRESULT mode=joint med=2.494140625 time_s=2.728407833\n"
+      },
+      "exp": {
+        "status": "ok",
+        "med": 2.583984375,
+        "reported_time_s": 2.832408792,
+        "wall_time_s": 2.836535930633545,
+        "returncode": 0,
+        "command": [
+          "build/ising-decomp",
+          "--input",
+          "benchmarks/numerics/exp-i-9-o-10-a-0-b-3-acc.txt",
+          "--mode",
+          "joint",
+          "--n-free",
+          "4",
+          "--rounds",
+          "5",
+          "--partitions",
+          "1000",
+          "--seed",
+          "1",
+          "--max-steps",
+          "2000",
+          "--quiet",
+          "--preset",
+          "paper-plus"
+        ],
+        "stdout": "mode=joint inputs=9 outputs=9 free=4 bound=5 row_set=free partitions=126 seed=1\nRESULT mode=joint med=2.583984375 time_s=2.832408792\n"
+      },
+      "ln": {
+        "status": "ok",
+        "med": 2.5078125,
+        "reported_time_s": 2.669533875,
+        "wall_time_s": 2.6767711639404297,
+        "returncode": 0,
+        "command": [
+          "build/ising-decomp",
+          "--input",
+          "benchmarks/numerics/ln-i-9-o-10-a-1-b-10-acc.txt",
+          "--mode",
+          "joint",
+          "--n-free",
+          "4",
+          "--rounds",
+          "5",
+          "--partitions",
+          "1000",
+          "--seed",
+          "1",
+          "--max-steps",
+          "2000",
+          "--quiet",
+          "--preset",
+          "paper-plus"
+        ],
+        "stdout": "mode=joint inputs=9 outputs=9 free=4 bound=5 row_set=free partitions=126 seed=1\nRESULT mode=joint med=2.5078125 time_s=2.669533875\n"
+      },
+      "erf": {
+        "status": "ok",
+        "med": 1.783203125,
+        "reported_time_s": 2.564017792,
+        "wall_time_s": 2.571484088897705,
+        "returncode": 0,
+        "command": [
+          "build/ising-decomp",
+          "--input",
+          "benchmarks/numerics/erf-i-9-o-10-a-0-b-3-acc.txt",
+          "--mode",
+          "joint",
+          "--n-free",
+          "4",
+          "--rounds",
+          "5",
+          "--partitions",
+          "1000",
+          "--seed",
+          "1",
+          "--max-steps",
+          "2000",
+          "--quiet",
+          "--preset",
+          "paper-plus"
+        ],
+        "stdout": "mode=joint inputs=9 outputs=9 free=4 bound=5 row_set=free partitions=126 seed=1\nRESULT mode=joint med=1.783203125 time_s=2.564017792\n"
+      },
+      "denoise": {
+        "status": "ok",
+        "med": 2.54296875,
+        "reported_time_s": 2.591375542,
+        "wall_time_s": 2.5988729000091553,
+        "returncode": 0,
+        "command": [
+          "build/ising-decomp",
+          "--input",
+          "benchmarks/numerics/denoise-i-9-o-10-a-0-b-3-acc.txt",
+          "--mode",
+          "joint",
+          "--n-free",
+          "4",
+          "--rounds",
+          "5",
+          "--partitions",
+          "1000",
+          "--seed",
+          "1",
+          "--max-steps",
+          "2000",
+          "--quiet",
+          "--preset",
+          "paper-plus"
+        ],
+        "stdout": "mode=joint inputs=9 outputs=9 free=4 bound=5 row_set=free partitions=126 seed=1\nRESULT mode=joint med=2.54296875 time_s=2.591375542\n"
+      }
+    }
+  }
+}

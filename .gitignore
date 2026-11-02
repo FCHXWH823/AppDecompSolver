@@ -1,0 +1,17 @@
+# Build products
+/build/
+/ising_solver/
+/DALTA/
+
+# Local papers and solver logs
+/*.pdf
+*.log
+*.lp
+
+# Python and editor files
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Generated baseline tables
+/results/table1/artifacts/
