@@ -1,0 +1,448 @@
+{
+  "configuration": {
+    "preset": "paper",
+    "mode": "joint",
+    "inputs": 16,
+    "n_free": 7,
+    "n_bound": 9,
+    "partitions": 1000,
+    "partition_strategy": "dalta-draw",
+    "rounds": 5,
+    "seed": 1,
+    "max_steps": 2000,
+    "sample_period": 10,
+    "energy_window": 10,
+    "epsilon": 1e-08
+  },
+  "runs": {
+    "tan": {
+      "name": "tan(x)",
+      "input": "benchmarks/numerics/tan-i-16-o-16-a-0-b-1_256637061-acc.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/numerics/tan-i-16-o-16-a-0-b-1_256637061-acc.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T03:28:57.358580+00:00",
+      "figure4_dalta": {
+        "med": 3.14,
+        "time_s": 3389.72
+      },
+      "wall_time_s": 1481.6497588157654,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=14 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=2.967453003 time_s=1481.603788\n",
+      "status": "ok",
+      "result": {
+        "med": 2.967453003,
+        "solver_time_s": 1481.603788
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 0.9450487270700637,
+        "time": 0.43708736650814817,
+        "speedup": 2.287872120370146
+      }
+    },
+    "cos": {
+      "name": "cos(x)",
+      "input": "benchmarks/numerics/cos-i-16-o-16-a-0-b-1_57079632-acc.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/numerics/cos-i-16-o-16-a-0-b-1_57079632-acc.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T03:28:57.358220+00:00",
+      "figure4_dalta": {
+        "med": 10.18,
+        "time_s": 4477.86
+      },
+      "wall_time_s": 1563.124260187149,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=15 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=9.701980591 time_s=1563.08662\n",
+      "status": "ok",
+      "result": {
+        "med": 9.701980591,
+        "solver_time_s": 1563.08662
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 0.9530432800589391,
+        "time": 0.3490700066549647,
+        "speedup": 2.8647548656004744
+      }
+    },
+    "exp": {
+      "name": "exp(x)",
+      "input": "benchmarks/numerics/exp-i-16-o-16-a-0-b-3-acc.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/numerics/exp-i-16-o-16-a-0-b-3-acc.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T03:28:57.361470+00:00",
+      "figure4_dalta": {
+        "med": 10.3,
+        "time_s": 3865.39
+      },
+      "wall_time_s": 1601.8956851959229,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=15 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=10.68754578 time_s=1601.86221\n",
+      "status": "ok",
+      "result": {
+        "med": 10.68754578,
+        "solver_time_s": 1601.86221
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 1.0376258038834951,
+        "time": 0.41441153674014786,
+        "speedup": 2.4130602344380168
+      }
+    },
+    "ln": {
+      "name": "ln(x)",
+      "input": "benchmarks/numerics/ln-i-16-o-16-a-1-b-10-acc.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/numerics/ln-i-16-o-16-a-1-b-10-acc.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T03:53:39.011847+00:00",
+      "figure4_dalta": {
+        "med": 10.65,
+        "time_s": 5312.16
+      },
+      "wall_time_s": 1487.399990081787,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=15 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=10.07583618 time_s=1487.361042\n",
+      "status": "ok",
+      "result": {
+        "med": 10.07583618,
+        "solver_time_s": 1487.361042
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 0.946087904225352,
+        "time": 0.27999176267281106,
+        "speedup": 3.5715336424684976
+      }
+    },
+    "denoise": {
+      "name": "denoise(x)",
+      "input": "benchmarks/numerics/denoise-i-16-o-16-a-0-b-3-acc.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/numerics/denoise-i-16-o-16-a-0-b-3-acc.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T03:55:39.257366+00:00",
+      "figure4_dalta": {
+        "med": 33.94,
+        "time_s": 4503.74
+      },
+      "wall_time_s": 1594.33340716362,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=15 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=9.858566284 time_s=1594.296288\n",
+      "status": "ok",
+      "result": {
+        "med": 9.858566284,
+        "solver_time_s": 1594.296288
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 0.2904704267530937,
+        "time": 0.35399385577320186,
+        "speedup": 2.8249077877800337
+      }
+    },
+    "erf": {
+      "name": "erf(x)",
+      "input": "benchmarks/numerics/erf-i-16-o-16-a-0-b-3-acc.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/numerics/erf-i-16-o-16-a-0-b-3-acc.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T03:55:00.484037+00:00",
+      "figure4_dalta": {
+        "med": 15.01,
+        "time_s": 3983.88
+      },
+      "wall_time_s": 1808.2780389785767,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=15 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=10.06335449 time_s=1808.240154\n",
+      "status": "ok",
+      "result": {
+        "med": 10.06335449,
+        "solver_time_s": 1808.240154
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 0.6704433371085943,
+        "time": 0.4538892120244586,
+        "speedup": 2.2031808060380014
+      }
+    },
+    "brent-kung": {
+      "name": "Brent-Kung",
+      "input": "benchmarks/axbench-verilog/adder_8.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/axbench-verilog/adder_8.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T04:18:26.412010+00:00",
+      "figure4_dalta": {
+        "med": 1.11,
+        "time_s": 1886.98
+      },
+      "wall_time_s": 846.087709903717,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=9 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=0.970703125 time_s=846.0578848\n",
+      "status": "ok",
+      "result": {
+        "med": 0.970703125,
+        "solver_time_s": 846.0578848
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 0.8745073198198198,
+        "time": 0.44836611135253157,
+        "speedup": 2.2303202108282036
+      }
+    },
+    "forwardk2j": {
+      "name": "Forwardk2j",
+      "input": "benchmarks/axbench-verilog/kin_16.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/axbench-verilog/kin_16.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T04:22:13.591080+00:00",
+      "figure4_dalta": {
+        "med": 1168.18,
+        "time_s": 8261.07
+      },
+      "wall_time_s": 1738.4648790359497,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=16 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=904.5250092 time_s=1738.422479\n",
+      "status": "ok",
+      "result": {
+        "med": 904.5250092,
+        "solver_time_s": 1738.422479
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 0.774302769436217,
+        "time": 0.2104355100489404,
+        "speedup": 4.752049688607368
+      }
+    },
+    "inversek2j": {
+      "name": "Inversek2j",
+      "input": "benchmarks/axbench-verilog/kin_inv.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/axbench-verilog/kin_inv.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T04:25:08.762486+00:00",
+      "figure4_dalta": {
+        "med": 379.68,
+        "time_s": 6970.9
+      },
+      "wall_time_s": 2007.2413108348846,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=16 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=359.4618683 time_s=2007.195086\n",
+      "status": "ok",
+      "result": {
+        "med": 359.4618683,
+        "solver_time_s": 2007.195086
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 0.9467495477770754,
+        "time": 0.28793915936249265,
+        "speedup": 3.472955891841995
+      }
+    },
+    "multiplier": {
+      "name": "Multiplier",
+      "input": "benchmarks/axbench-verilog/mult_8.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/axbench-verilog/mult_8.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T04:32:32.500220+00:00",
+      "figure4_dalta": {
+        "med": 481.47,
+        "time_s": 8506.03
+      },
+      "wall_time_s": 2028.3674187660217,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=16 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=426.1583405 time_s=2028.323694\n",
+      "status": "ok",
+      "result": {
+        "med": 426.1583405,
+        "solver_time_s": 2028.323694
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 0.8851191984962719,
+        "time": 0.23845715263172124,
+        "speedup": 4.193625517052211
+      }
+    }
+  },
+  "summary": {
+    "completed": 10,
+    "total": 10,
+    "mean_case_med_ratio": 0.8323398314628921,
+    "mean_case_time_ratio": 0.3473641673769418,
+    "speedup_from_mean_case_time_ratio": 2.8788231312150603,
+    "aggregate_med_ratio": 0.825331726698239,
+    "aggregate_time_ratio": 0.3158163828965828
+  }
+}

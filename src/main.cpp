@@ -264,6 +264,32 @@ void generate_combinations(int n, int k, int start, std::vector<int> & current,
 
 std::vector<Partition> make_partitions(int n, int n_free, int maximum,
                                        std::mt19937 & random) {
+    // Match DALTA's partition-selection policy.  It enumerates partitions for
+    // small input counts, but for n > 10 repeatedly shuffles the input
+    // variables and takes the first n_free entries.  In particular, the
+    // sampled list may contain duplicates and its first entry is the natural
+    // partition {0, ..., n_free - 1}; enumerating all combinations and then
+    // sampling without replacement gives a different Figure-4 experiment.
+    if (n > 10 && maximum > 0) {
+        std::vector<Partition> sampled;
+        sampled.reserve(maximum);
+        std::vector<int> variables(n);
+        std::iota(variables.begin(), variables.end(), 0);
+        for (int sample = 0; sample < maximum; ++sample) {
+            Partition partition;
+            partition.free.assign(variables.begin(),
+                                  variables.begin() + n_free);
+            std::sort(partition.free.begin(), partition.free.end());
+            std::vector<uint8_t> selected(n, 0);
+            for (int value : partition.free) selected[value] = 1;
+            for (int value = 0; value < n; ++value)
+                if (!selected[value]) partition.bound.push_back(value);
+            sampled.push_back(std::move(partition));
+            std::shuffle(variables.begin(), variables.end(), random);
+        }
+        return sampled;
+    }
+
     std::vector<Partition> all;
     std::vector<int> current;
     generate_combinations(n, n_free, 0, current, all);

@@ -10,6 +10,7 @@
     "n_bound": 9,
     "row_set": "free",
     "partitions": 1000,
+    "partition_strategy": "dalta-draw",
     "rounds": 5,
     "seed": 1,
     "max_steps": 2000,
@@ -29,16 +30,16 @@
     "--preset", "paper"
   ],
   "result": {
-    "med": 0.83984375,
-    "solver_time_s": 784.5099408
+    "med": 0.970703125,
+    "solver_time_s": 846.0578848
   },
   "figure4_dalta": {
     "med": 1.11,
     "time_s": 1886.98
   },
   "ratio_to_figure4_dalta": {
-    "med": 0.756616,
-    "time": 0.415749,
-    "speedup": 2.4053
+    "med": 0.874507,
+    "time": 0.448366,
+    "speedup": 2.23032
   }
 }

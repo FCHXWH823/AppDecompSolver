@@ -310,10 +310,24 @@ When Gurobi is found at build time, `--core-solver gurobi --oracle-time 0.1`
 enables a bounded exact column-core oracle. This is a diagnostic/calibration
 path; the default and reproduced solver remain `--core-solver bsb`.
 
-## Figure 4: Brent-Kung
+## Figure 4: 16-input joint mode
 
 The paper repeats its MSB-to-LSB joint optimization for `R` rounds and sets
-`R=5` in the experimental configuration. The full 16-input Brent-Kung run is:
+`R=5` in the experimental configuration. For `n>10`, it also states that the
+proposed solver uses DALTA's random input-partition strategy. This
+implementation mirrors DALTA's `DrawVarOrd`: the first candidate is the
+natural free set `{0,...,n_free-1}`, later candidates are obtained by
+repeatedly shuffling the input variables, and duplicate partitions are
+allowed. This detail materially affects the 16-input results; sampling unique
+combinations uniformly is not the same experiment.
+
+Run all ten Figure 4 cases, with atomic per-case checkpointing, using:
+
+```sh
+python3 experiments/run_figure4.py --jobs 3
+```
+
+The full 16-input Brent-Kung command is:
 
 ```sh
 ./build/ising-decomp \
@@ -327,6 +341,5 @@ The paper repeats its MSB-to-LSB joint optimization for `R` rounds and sets
   --preset paper
 ```
 
-This run obtains MED 0.839844 in 784.51 seconds. Its full record and comparison
-with the DALTA values printed in Figure 4 are in
-`results/figure4/README.md`.
+The completed records and comparison with the DALTA values printed in Figure 4
+are stored under `results/figure4/`.

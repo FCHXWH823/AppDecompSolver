@@ -1,0 +1,192 @@
+{
+  "configuration": {
+    "preset": "paper",
+    "mode": "joint",
+    "inputs": 16,
+    "n_free": 7,
+    "n_bound": 9,
+    "partitions": 1000,
+    "rounds": 5,
+    "seed": 1,
+    "max_steps": 2000,
+    "sample_period": 10,
+    "energy_window": 10,
+    "epsilon": 1e-08
+  },
+  "runs": {
+    "brent-kung": {
+      "name": "Brent-Kung",
+      "input": "benchmarks/axbench-verilog/adder_8.txt",
+      "command": [
+        "./build/ising-decomp",
+        "--input",
+        "benchmarks/axbench-verilog/adder_8.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper"
+      ],
+      "status": "ok",
+      "wall_time_s": 784.5099408,
+      "result": {
+        "med": 0.83984375,
+        "solver_time_s": 784.5099408
+      },
+      "figure4_dalta": {
+        "med": 1.11,
+        "time_s": 1886.98
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 0.756616,
+        "time": 0.415749,
+        "speedup": 2.4053
+      },
+      "source": "imported from brent-kung-paper.json"
+    },
+    "tan": {
+      "name": "tan(x)",
+      "input": "benchmarks/numerics/tan-i-16-o-16-a-0-b-1_256637061-acc.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/numerics/tan-i-16-o-16-a-0-b-1_256637061-acc.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T02:45:15.773582+00:00",
+      "figure4_dalta": {
+        "med": 3.14,
+        "time_s": 3389.72
+      },
+      "wall_time_s": 1528.3217289447784,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=14 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=13.43690491 time_s=1528.374894\n",
+      "status": "ok",
+      "result": {
+        "med": 13.43690491,
+        "solver_time_s": 1528.374894
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 4.279269079617834,
+        "time": 0.4508852925905385,
+        "speedup": 2.2178589908190416
+      }
+    },
+    "exp": {
+      "name": "exp(x)",
+      "input": "benchmarks/numerics/exp-i-16-o-16-a-0-b-3-acc.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/numerics/exp-i-16-o-16-a-0-b-3-acc.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T02:45:15.773747+00:00",
+      "figure4_dalta": {
+        "med": 10.3,
+        "time_s": 3865.39
+      },
+      "wall_time_s": 1665.0297639369965,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=15 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=66.59669495 time_s=1665.097203\n",
+      "status": "ok",
+      "result": {
+        "med": 66.59669495,
+        "solver_time_s": 1665.097203
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 6.465698538834951,
+        "time": 0.43077081562274444,
+        "speedup": 2.321420030635893
+      }
+    },
+    "cos": {
+      "name": "cos(x)",
+      "input": "benchmarks/numerics/cos-i-16-o-16-a-0-b-1_57079632-acc.txt",
+      "command": [
+        "build/ising-decomp",
+        "--input",
+        "benchmarks/numerics/cos-i-16-o-16-a-0-b-1_57079632-acc.txt",
+        "--mode",
+        "joint",
+        "--n-free",
+        "7",
+        "--rounds",
+        "5",
+        "--partitions",
+        "1000",
+        "--seed",
+        "1",
+        "--max-steps",
+        "2000",
+        "--preset",
+        "paper",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-11-02T02:45:15.773194+00:00",
+      "figure4_dalta": {
+        "med": 10.18,
+        "time_s": 4477.86
+      },
+      "wall_time_s": 1717.4990062713623,
+      "returncode": 0,
+      "stdout": "mode=joint inputs=16 outputs=15 free=7 bound=9 row_set=free partitions=1000 seed=1\nRESULT mode=joint med=33.93582153 time_s=1717.565756\n",
+      "status": "ok",
+      "result": {
+        "med": 33.93582153,
+        "solver_time_s": 1717.565756
+      },
+      "ratio_to_figure4_dalta": {
+        "med": 3.3335777534381137,
+        "time": 0.3835684358153225,
+        "speedup": 2.607096691557467
+      }
+    }
+  },
+  "summary": {
+    "completed": 4,
+    "total": 10,
+    "mean_case_med_ratio": 3.7087903429727245,
+    "mean_case_time_ratio": 0.4202433860071514,
+    "speedup_from_mean_case_time_ratio": 2.3795734407655442,
+    "aggregate_med_ratio": 4.642509710473109,
+    "aggregate_time_ratio": 0.41817685041428204
+  }
+}
